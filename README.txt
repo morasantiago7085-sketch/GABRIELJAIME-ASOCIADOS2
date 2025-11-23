@@ -1,0 +1,1 @@
+Versión viva: incluye blog de ejemplo y placeholders. Reemplaza formspree ID in contacto.html and upload to hosting.

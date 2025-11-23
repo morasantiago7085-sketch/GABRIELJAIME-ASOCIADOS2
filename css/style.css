@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Alex+Brush&display=swap');
+:root{--white:#ffffff;--black:#0b0b0b;--blue:#5dade2;--gold:#d4af37;--max-width:1100px;}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Montserrat',system-ui,Arial,Helvetica,sans-serif;color:var(--black);background:var(--white);-webkit-font-smoothing:antialiased}
+.container{max-width:var(--max-width);margin:0 auto;padding:28px}
+.header{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:56px;width:56px;object-fit:contain;border-radius:6px}
+.brand h1{font-family:'Alex Brush',cursive;font-size:30px;color:var(--black);margin-left:6px}
+.nav a{margin-left:18px;text-decoration:none;color:var(--black);font-weight:600}
+.hero{display:flex;gap:30px;align-items:center;padding:40px 0;background-image:url('img/hero.svg');background-size:cover;background-position:center;border-radius:8px;margin-bottom:20px;color:var(--black);padding:64px}
+.hero-left{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.85), rgba(255,255,255,0.6));padding:28px;border-radius:8px}
+.hero h2{font-size:30px;margin-bottom:8px}
+.hero p.lead{font-size:16px;color:#333;margin-bottom:18px}
+.cta{display:inline-block;background:var(--black);color:var(--white);padding:12px 20px;border-radius:6px;text-decoration:none;font-weight:600}
+.stats{display:flex;gap:18px;margin-top:18px}
+.stat{background:linear-gradient(180deg, rgba(255,255,255,0.95), rgba(250,250,250,0.95));padding:12px;border-radius:8px;flex:1;text-align:center;box-shadow:0 6px 18px rgba(16,24,40,0.06)}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin:28px 0}
+.card{border:1px solid rgba(0,0,0,0.06);padding:18px;border-radius:10px;background:var(--white);transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(16,24,40,0.08)}
+.section-title{font-size:20px;margin-bottom:12px;color:var(--black);display:flex;align-items:center;gap:8px}
+.footer{padding:24px 0;border-top:1px solid rgba(0,0,0,0.06);margin-top:36px;color:#333}
+.values-list{display:flex;flex-direction:column;gap:10px;margin-top:12px}
+.small{font-size:14px;color:#444}
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.form-card{max-width:720px;background:#fff;border:1px solid rgba(0,0,0,0.06);padding:18px;border-radius:8px}
+.form-row{display:flex;gap:12px;margin-bottom:12px}
+.form-row .col{flex:1}
+input,select,textarea{width:100%;padding:10px;border:1px solid #ddd;border-radius:6px;font-size:14px}
+textarea{min-height:120px;resize:vertical}
+.btn-submit{background:var(--blue);color:#fff;padding:10px 14px;border-radius:6px;border:none;cursor:pointer;font-weight:600}
+.whatsapp-float{position:fixed;right:18px;bottom:18px;z-index:999;display:flex;align-items:center;gap:10px;text-decoration:none}
+.whatsapp-btn{background:#25d366;color:#fff;height:52px;width:52px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 6px 20px rgba(0,0,0,0.15)}
+.whatsapp-label{background:var(--black);color:var(--white);padding:8px 12px;border-radius:8px;font-weight:600;opacity:0;transform:translateY(6px);transition:all .18s ease;white-space:nowrap}
+.whatsapp-float:hover .whatsapp-label{opacity:1;transform:translateY(0)}
+.reveal{opacity:0;transform:translateY(10px);transition:all .6s ease;will-change:transform,opacity}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:900px){
+	.hero{padding:28px;flex-direction:column;background-image:none}
+	.brand img{height:48px;width:48px}
+	.brand h1{font-size:22px}
+	/* Make nav available on mobile as a stacked list */
+	.header{flex-direction:column;align-items:flex-start;gap:12px}
+	.nav{display:flex;flex-direction:column;gap:10px;width:100%}
+	.nav a{margin-left:0;padding:8px 12px;border-radius:8px;background:transparent}
+}
+
+/* Smaller screens adjustments */
+@media(max-width:600px){
+	.container{padding:18px}
+	.hero{padding:18px}
+	.hero h2{font-size:22px}
+	.hero p.lead{font-size:15px}
+	.stats{flex-direction:column;gap:10px}
+	.brand h1{font-size:20px}
+	.services-grid{gap:12px}
+	.section-title{font-size:18px}
+}
+
+@media(max-width:480px){
+	.brand img{height:40px;width:40px}
+	.brand h1{font-size:18px}
+	.cta{padding:10px 14px}
+	.nav a{font-size:15px}
+	.whatsapp-label{display:none}
+	.whatsapp-btn{height:44px;width:44px}
+	.card{padding:12px}
+}
+
+/* Ensure images are fluid */
+img{max-width:100%;height:auto}
