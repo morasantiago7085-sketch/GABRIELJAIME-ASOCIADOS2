@@ -420,10 +420,6 @@ textarea {
 	margin: 40px 0;
 }
 
-.split-section:nth-child(even) {
-	flex-direction: row-reverse;
-}
-
 .split-content {
 	flex: 1;
 }
@@ -433,8 +429,8 @@ textarea {
 }
 
 .split-image img {
-	width: 70%;
-	height: 60%;
+	width: 100%;
+	height: auto;
 	object-fit: cover;
 	border-radius: 12px;
 	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
@@ -484,4 +480,12 @@ textarea {
 img {
 	max-width: 100%;
 	height: auto
+}
+
+.text-justified-center {
+	text-align: justify;
+}
+
+.text-justified-center .section-title {
+	justify-content: center;
 }
