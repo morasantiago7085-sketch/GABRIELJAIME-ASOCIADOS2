@@ -21,21 +21,16 @@ document.addEventListener('DOMContentLoaded', function(){
     countUp(it, end, 1000);
   });
 
-  /* NAVIGATION TOGGLE (hamburger) */
   var navToggle = document.querySelector('.nav-toggle');
   var nav = document.querySelector('.nav');
   if(navToggle && nav){
     navToggle.addEventListener('click', function(e){
       e.stopPropagation();
       var isOpen = nav.classList.toggle('open');
-      // animate bars
       navToggle.classList.toggle('open');
-      // update accessible state
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
     });
-    // Close nav when clicking a link
     nav.querySelectorAll('a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); navToggle.classList.remove('open'); }); });
-    // Close when clicking outside
     document.addEventListener('click', function(e){ if(!nav.contains(e.target) && !navToggle.contains(e.target)){ nav.classList.remove('open'); navToggle.classList.remove('open'); } });
   }
 });

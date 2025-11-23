@@ -1,7 +1,3 @@
-# Image optimization script (PowerShell)
-# Requires: cwebp (from libwebp) for WebP conversion and/or ImageMagick (magick) for resizing
-# Usage: Run in project root. Example: .\scripts\optimize-images.ps1
-
 param(
     [string]$SrcDir = "img",
     [string]$OutDir = "img/optimized",
@@ -43,7 +39,6 @@ Get-ChildItem -Path $SrcDir -Include *.png,*.jpg,*.jpeg,*.svg -File | ForEach-Ob
                 Write-Warning "Failed to resize $($file.Name) to ${w}px: $_"
             }
         }
-        # Also create a copy of original size in out dir
         $origOut = Join-Path $OutDir ("{0}{1}" -f $name, $ext)
         Write-Output "Copying original $($file.Name) -> $($origOut)"
         Copy-Item -Path $file.FullName -Destination $origOut -Force
@@ -52,7 +47,6 @@ Get-ChildItem -Path $SrcDir -Include *.png,*.jpg,*.jpeg,*.svg -File | ForEach-Ob
     }
 
     if($hasCwebp){
-        # Create webp for original and resized versions if they exist
         $sourceFiles = @()
         if($hasMagick){
             $sourceFiles += (Get-ChildItem -Path $OutDir -Filter "${name}-*${ext}" -File -ErrorAction SilentlyContinue)
